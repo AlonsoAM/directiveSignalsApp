@@ -8,6 +8,7 @@
       #txtEmail
       (input)="onFieldUpdated('email', txtEmail.value)"
       placeholder="Email"
+      [value]="user().email"
     />
     <input
       type="text"
@@ -15,6 +16,7 @@
       #txtFirstName
       (input)="onFieldUpdated('first_name', txtFirstName.value)"
       placeholder="Nombre"
+      [value]="user().first_name"
     />
     <input
       type="text"
@@ -22,12 +24,13 @@
       #txtLastName
       (input)="onFieldUpdated('last_name', txtLastName.value)"
       placeholder="Apellido"
+      [value]="user().last_name"
     />
   </div>
   <div class="col-6">
     <!-- Data del usuario -->
-    <pre>
-      {{ "asd" }}
-    </pre>
+    <pre>{{ user() | json }}</pre>
+
+    {{ fullName() }}
   </div>
 </div>
