@@ -2,15 +2,19 @@
 <hr />
 <div class="row">
   <div class="col-4">
-    <h3>Usuario Actual</h3>
-    <button class="btn btn-primary me-2">Anterior</button>
-    <button class="btn btn-primary me-2">Siguiente</button>
+    <h3>Usuario Actual: {{ userID() }}</h3>
+    <button (click)="loadUser(userID() - 1)" class="btn btn-primary me-2">
+      Anterior
+    </button>
+    <button (click)="loadUser(userID() + 1)" class="btn btn-primary me-2">
+      Siguiente
+    </button>
   </div>
-  <div class="col-8">
+  <div class="col-8" *ngIf="currentUser()">
     <h3>Usuario:</h3>
-    <p>Email:</p>
-    <p>Nombre:</p>
-    <img src="..." alt="Avatar" />
+    <p>Email: {{ currentUser()!.email }}</p>
+    <p>Nombre: {{ currentUser()!.email }}</p>
+    <img [src]="currentUser()!.avatar" alt="Avatar" class="rounded" />
   </div>
   <div class="col-8">
     <h3 class="text-danger">Usuario no encontrado</h3>

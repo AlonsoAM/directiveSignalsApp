@@ -8,7 +8,7 @@ import { User, SingleUserResponse } from '../interfaces/user-request.interface';
 })
 export class UsersServiceService {
   private htpp = inject(HttpClient);
-  private baseUrl = 'https://reqres.in/api/users/';
+  private baseUrl = 'https://reqres.in/api/users';
 
   getUserByID(id: number): Observable<User> {
     return this.htpp.get<SingleUserResponse>(`${this.baseUrl}/${id}`).pipe(
