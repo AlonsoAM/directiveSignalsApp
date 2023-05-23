@@ -1,1 +1,33 @@
-<p>properties-page works!</p>
+<h1>Mutaciones</h1>
+<hr />
+<div class="row">
+  <div class="col-6">
+    <input
+      type="text"
+      class="form-control"
+      #txtEmail
+      (input)="onFieldUpdated('email', txtEmail.value)"
+      placeholder="Email"
+    />
+    <input
+      type="text"
+      class="form-control mt-2"
+      #txtFirstName
+      (input)="onFieldUpdated('first_name', txtFirstName.value)"
+      placeholder="Nombre"
+    />
+    <input
+      type="text"
+      class="form-control mt-2"
+      #txtLastName
+      (input)="onFieldUpdated('last_name', txtLastName.value)"
+      placeholder="Apellido"
+    />
+  </div>
+  <div class="col-6">
+    <!-- Data del usuario -->
+    <pre>
+      {{ "asd" }}
+    </pre>
+  </div>
+</div>
